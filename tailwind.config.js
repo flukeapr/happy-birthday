@@ -6,7 +6,20 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        bounceY: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+       
+      },
+      animation: {
+        bounceY: 'bounceY 4s infinite',
+        reversBounceY: 'bounceY 6s infinite reverse',
+       
+      },
+    },
   },
   plugins: [
     daisyui,
