@@ -1,23 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import BirthdayBanner from "/images/birthday-banner-top.png";
 import "./App.css";
-import Wishcomponent from "./components/WishComponent";
-import balloon from "/images/balloon.png";
-import { ReactFloatingBalloons } from "react-floating-balloons";
-import useSound from "use-sound";
-import happySong from "/music/happy-birthday.mp3";
 import { motion } from "framer-motion";
 import Confetti from "react-confetti";
-import { Cake } from "lucide-react";
 import Envelope from "./components/Envelope";
 
 function App() {
   const [isBlowing, setIsBlowing] = useState(false);
   const [flameVisible, setFlameVisible] = useState(true);
-  const wishComponentRef = useRef<HTMLDivElement>(null);
   const [confetti, setConfetti] = useState(false);
-  const [play, { pause }] = useSound(happySong, { volume: 0.25 });
-  const [isPlaying, setIsPlaying] = useState(false);
   const audioContextRef = useRef<AudioContext | null>(null);
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
@@ -96,19 +87,7 @@ function App() {
     }
   }, [flameVisible]);
 
-  // useEffect(() => {
-  //   if (!flameVisible) {
-  //     if (!isPlaying) {
-  //       play();
-  //       setIsPlaying(true);
-  //     }
-  //   } else {
-  //     if (isPlaying) {
-  //       pause();
-  //       setIsPlaying(false);
-  //     }
-  //   }
-  // }, [flameVisible]);
+  
 
   return (
     <>
@@ -274,15 +253,6 @@ function App() {
       
       </main>
 
-      {/* {!flameVisible && (
-        <div
-          className="w-full h-screen pt-20 flex flex-col "
-          ref={wishComponentRef}
-        >
-          <Wishcomponent />
-        </div>
-      )} */}
-      {/* <Wishcomponent /> */}
     </>
   );
 }

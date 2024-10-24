@@ -1,7 +1,3 @@
-import { useEffect, useState } from "react";
-
-import Card from "./Card";
-import "../App.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -9,7 +5,7 @@ import { EffectCards } from 'swiper/modules';
 import { Cake ,Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
-let cards = [
+let Cards  = [
   {
     key: 1,
     content: "/images/F1.jpg",
@@ -57,7 +53,7 @@ export default function WishComponent() {
         modules={[EffectCards]}
         className="mySwiper w-[240px] h-[300px] my-4"
       >
-        {cards.map((card) => (
+        {Cards.map((card) => (
            <SwiperSlide key={card.key} className="flex items-center justify-center rounded-lg ">
             <img src={card.content} />
            </SwiperSlide>
