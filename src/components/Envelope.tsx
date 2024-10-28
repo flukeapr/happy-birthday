@@ -124,7 +124,7 @@ export default function Envelope() {
         </motion.div>
       )}
       <dialog id="my_modal_2" className="modal ">
-        <div className="modal-box h-[80%]">
+        <div className="modal-box h-[85%] ">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button
