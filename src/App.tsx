@@ -112,12 +112,12 @@ function App() {
           {/* <h1 className="text-gray-600 text-center">20 ปี</h1>
           <h1 className="text-gray-600 text-center">29/10/2547</h1> */}
           {!showEnvelope ? (
-            <p className="text-center my-10 text-gray-600">
+            <p className="text-center my-8 text-gray-600">
               {flameVisible
                 ? "อ้วนลองเป่าเทียน"
                 : "🎉 สุขสันต์วันเกิดนะอ้วน! 🎉"}
             </p>
-          ):(<p className="text-center my-10 text-gray-600">
+          ):(<p className="text-center my-8 text-gray-600">
           เปิดซองดูอ้วน
         </p>)}
 
