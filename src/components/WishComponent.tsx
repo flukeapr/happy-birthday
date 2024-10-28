@@ -5,7 +5,9 @@ import { EffectCards } from 'swiper/modules';
 import { Cake ,Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
-let Cards  = [
+
+
+const Cards = [
   {
     key: 1,
     content: "/images/F1.jpg",
@@ -32,12 +34,12 @@ export default function WishComponent() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="  flex items-center  uppercase text-2xl font-bold  bg-gradient-to-r from-violet-500 to-purple-300 bg-clip-text text-transparent "
+            className="Concert  flex items-center  uppercase text-2xl font-bold  bg-gradient-to-r from-violet-500 to-purple-300 bg-clip-text text-transparent "
           >
             สุขสันต์วันเกิดนะอ้วน <Cake color="#d8b4fe "  size={26} className="ml-2" />
           </motion.h1>
         <div className="border border-gray-400 w-full h-32 rounded-md p-2 mt-2">
-        <p >
+        <p className='Concert'>
           วันเกิดปีนี้อายุ 20 โตขึ้นอีกปีแล้วนะอ้วน ยิ้มเยอะๆ
           กินข้าวให้อร่อย
           รำรวยๆ

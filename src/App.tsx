@@ -104,19 +104,19 @@ function App() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className=" my-4 flex items-center justify-center uppercase text-4xl font-bold  bg-gradient-to-r from-violet-500 to-purple-300 bg-clip-text text-transparent "
+            className=" my-4 flex items-center justify-center uppercase text-6xl font-bold  bg-gradient-to-r from-violet-500 to-purple-300 bg-clip-text text-transparent "
           >
-            happy birthday!
+            happy <br/> birthday! <br/> Fern
           </motion.h1>
-          <h1 className="text-gray-600 text-center">20 ปี</h1>
-          <h1 className="text-gray-600 text-center">29/10/2547</h1>
+          {/* <h1 className="text-gray-600 text-center">20 ปี</h1>
+          <h1 className="text-gray-600 text-center">29/10/2547</h1> */}
           {!showEnvelope ? (
-            <p className="text-center my-14 text-gray-600">
+            <p className="text-center my-10 text-gray-600">
               {flameVisible
                 ? "อ้วนลองเป่าเทียน"
                 : "🎉 สุขสันต์วันเกิดนะอ้วน! 🎉"}
             </p>
-          ):(<p className="text-center my-14 text-gray-600">
+          ):(<p className="text-center my-10 text-gray-600">
           เปิดซองดูอ้วน
         </p>)}
 
