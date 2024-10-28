@@ -9,12 +9,12 @@ export default function Envelope() {
   useEffect(()=>{
     if(isOpen){
       const timer = setTimeout(() => {
-        document.getElementById('my_modal_2')?.showModal()
+        (document.getElementById('my_modal_2') as HTMLDialogElement)?.showModal()
       }, 2000); 
       return () => clearTimeout(timer);
         
     }else{
-        document.getElementById('my_modal_2')?.close()
+      (document.getElementById('my_modal_2') as HTMLDialogElement)?.close()
 
     }
   },[isOpen])
@@ -46,7 +46,7 @@ export default function Envelope() {
             width={350}
             height={350}
             viewBox="0 0 1024 1024"
-            class="icon"
+            className="icon"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             fill="#000000"
