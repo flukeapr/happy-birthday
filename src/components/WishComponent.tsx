@@ -68,7 +68,7 @@ export default function WishComponent() {
           height="48px"
           viewBox="-10.8 -10.8 57.60 57.60"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          
           aria-hidden="true"
           role="img"
           preserveAspectRatio="xMidYMid meet"
@@ -93,7 +93,7 @@ export default function WishComponent() {
           height="64px"
           viewBox="-10.8 -10.8 57.60 57.60"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          
           aria-hidden="true"
           role="img"
           preserveAspectRatio="xMidYMid meet"

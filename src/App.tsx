@@ -5,15 +5,20 @@ import { motion } from "framer-motion";
 import Confetti from "react-confetti";
 import Envelope from "./components/Envelope";
 
+interface Window {
+  webkitAudioContext?: typeof AudioContext;
+}
+
+
 function App() {
-  const [isBlowing, setIsBlowing] = useState(false);
   const [flameVisible, setFlameVisible] = useState(true);
   const [confetti, setConfetti] = useState(false);
   const audioContextRef = useRef<AudioContext | null>(null);
-  const [windowSize, setWindowSize] = useState({
+  const windowSize = {
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,
-  });
+  };
+  console.log(windowSize);
   const [showEnvelope, setShowEnvelope] = useState(false);
   useEffect(() => {
     const startMic = async () => {
@@ -24,8 +29,7 @@ function App() {
         });
 
         // สร้าง AudioContext
-        const AudioContextClass =
-          window.AudioContext || (window as any).webkitAudioContext;
+        const AudioContextClass : typeof AudioContext | undefined  = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
         audioContextRef.current = new AudioContextClass();
         const audioContext = audioContextRef.current;
 
@@ -51,12 +55,9 @@ function App() {
 
           // ถ้าความดังเกินเกณฑ์ที่กำหนด (ปรับค่าตามความเหมาะสม)
           if (average > 50) {
-            setIsBlowing(true);
             setFlameVisible(false);
             setConfetti(true);
-          } else {
-            setIsBlowing(false);
-          }
+          } 
 
           // ทำการเช็คต่อเนื่อง
           requestAnimationFrame(checkAudioLevel);
@@ -132,10 +133,9 @@ function App() {
               height="300px"
               viewBox="0 0 512 512"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
               aria-hidden="true"
               role="img"
-              class="iconify iconify--fxemoji"
+              className="iconify iconify--fxemoji"
               preserveAspectRatio="xMidYMid meet"
               fill="#000000"
             >
@@ -202,7 +202,7 @@ function App() {
           height="48px"
           viewBox="-10.8 -10.8 57.60 57.60"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+         
           aria-hidden="true"
           role="img"
           preserveAspectRatio="xMidYMid meet"
@@ -229,7 +229,7 @@ function App() {
           height="64px"
           viewBox="-10.8 -10.8 57.60 57.60"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          
           aria-hidden="true"
           role="img"
           preserveAspectRatio="xMidYMid meet"
